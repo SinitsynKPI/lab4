@@ -1,4 +1,4 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 
 :root {
     --color-bg-light-blue: #A9C9D9;
@@ -19,7 +19,6 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'DejaVu Sans', sans-serif;
-    
     background-color: var(--color-bg-light-blue);
     min-height: 100vh;
     display: flex;
@@ -111,40 +110,44 @@ body {
     }
 
     .grid-container {
-        display: flex;
-        flex-direction: column; 
+        display: block; 
         max-width: 400px;
-        gap: 10px; 
+        padding-bottom: 50px; 
     }
 
+    .info-card {
+        margin-bottom: 10px; 
+    }
+    
     .image-section {
         position: relative; 
-        order: 5;
         width: 100%;
-        margin-top: 20px;
-        height: 450px; 
+        margin-top: 30px;
+        height: 600px; 
+        order: 5;
     }
 
     .image-homer-wrapper { 
-        position: absolute;
-        width: 200px;
-        height: 250px;
-        top: 20px; 
-        left: 20px; 
-        margin: 0;
+        position: relative; 
+        width: 100%;
+        max-width: 300px; 
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        left: 0 !important; 
+        top: 0 !important;
         z-index: 2;
     }
 
     .image-bart-wrapper {
-        position: absolute; 
-        width: 250px;
-        height: 250px;
-        top: 150px; 
-        left: 50px;
-        margin: 0;
+        position: relative; 
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        transform: translateY(-150px); 
         z-index: 3;
-        background-color: var(--color-accent-pink);
-        padding: 10px;
+        margin-left: 50px; 
     }
 }
-
