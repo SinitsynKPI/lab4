@@ -1,10 +1,10 @@
-@charset "UTF-8"; /* Важливо для коректного відображення українських символів */
+@charset "UTF-8"; 
 
 /* ----------------------------------------------------------------
  * 1. Base Styles & Global Settings
  * ---------------------------------------------------------------- */
 :root {
-    /* Кольори */
+    /* РљРѕР»СЊРѕСЂРё */
     --color-bg-light-blue: #A9C9D9;
     --color-bg-white: #FFFFFF;
     --color-card-bg-dark: #6495b6;
@@ -22,8 +22,9 @@
 }
 
 body {
-    /* *** ВИПРАВЛЕННЯ ШРИФТІВ: Розширений список для гарантованої підтримки кирилиці *** */
+    /* *** Р’РРџР РђР’Р›Р•РќРќРЇ РЁР РР¤РўР†Р’: Р РѕР·С€РёСЂРµРЅРёР№ СЃРїРёСЃРѕРє РґР»СЏ РіР°СЂР°РЅС‚РѕРІР°РЅРѕС— РїС–РґС‚СЂРёРјРєРё РєРёСЂРёР»РёС†С– *** */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'DejaVu Sans', sans-serif;
+    
     background-color: var(--color-bg-light-blue);
     min-height: 100vh;
     display: flex;
@@ -47,21 +48,10 @@ body {
     line-height: 1.6;
 }
 
-.card-company .card-title, .card-team .card-title {
-    color: var(--color-text-main);
-}
-
-.card-company .card-text, .card-team .card-text {
-    color: var(--color-text-main);
-}
-
-.card-mission .card-title, .card-awards .card-title {
-    color: var(--color-text-dark);
-}
-
-.card-mission .card-text, .card-awards .card-text {
-    color: var(--color-text-light-dark);
-}
+.card-company .card-title, .card-team .card-title { color: var(--color-text-main); }
+.card-company .card-text, .card-team .card-text { color: var(--color-text-main); }
+.card-mission .card-title, .card-awards .card-title { color: var(--color-text-dark); }
+.card-mission .card-text, .card-awards .card-text { color: var(--color-text-light-dark); }
 
 
 /* ----------------------------------------------------------------
@@ -69,33 +59,18 @@ body {
  * ---------------------------------------------------------------- */
 .grid-container {
     display: grid;
-    /* Налаштування сітки для десктопу (2x2 картки + область зображень) */
     grid-template-columns: repeat(2, 280px) 400px;
-    grid-template-rows: repeat(2, minmax(260px, auto)); /* Збільшена висота для тексту */
-    gap: 20px;
+    grid-template-rows: repeat(2, minmax(260px, auto));
+    gap: 20px; 
     max-width: 1020px;
     width: 100%;
 }
 
-.card-company {
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-.card-mission {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-.card-awards {
-    grid-area: 2 / 1 / 3 / 2;
-}
-
-.card-team {
-    grid-area: 2 / 2 / 3 / 3;
-}
-
-.image-section {
-    grid-area: 1 / 3 / 3 / 4;
-}
+.card-company { grid-area: 1 / 1 / 2 / 2; } 
+.card-mission { grid-area: 1 / 2 / 2 / 3; } 
+.card-awards { grid-area: 2 / 1 / 3 / 2; } 
+.card-team { grid-area: 2 / 2 / 3 / 3; } 
+.image-section { grid-area: 1 / 3 / 3 / 4; } 
 
 /* ----------------------------------------------------------------
  * 4. Card Styling
@@ -106,43 +81,39 @@ body {
     transition: all 0.3s ease;
 }
 
-.card-company, .card-team {
-    background-color: var(--color-card-bg-dark);
-}
-
-.card-mission, .card-awards {
-    background-color: var(--color-bg-white);
-}
+.card-company, .card-team { background-color: var(--color-card-bg-dark); } 
+.card-mission, .card-awards { background-color: var(--color-bg-white); }
 
 /* ----------------------------------------------------------------
  * 5. Image Positioning (Desktop)
  * ---------------------------------------------------------------- */
-.image-section {
-    position: relative;
+.image-section { 
+    position: relative; 
+    /* Р’РёР·РЅР°С‡Р°С”РјРѕ С‡С–С‚РєС– РјРµР¶С– РґР»СЏ desktop-РІРµСЂСЃС–С— */
+    min-height: 540px; 
 }
-
 .image-wrapper {
     position: absolute;
     border: 8px solid var(--color-bg-white);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.image-homer-wrapper { /* Зображення Гомера (верхнє) */
+.image-homer-wrapper { 
     width: 280px;
     height: 320px;
-    top: 50px;
-    left: 0;
-    z-index: 2;
+    top: 50px; 
+    left: 0; 
+    z-index: 2; 
 }
 
-.image-bart-wrapper { /* Зображення Барта (нижнє, перекриває) */
+.image-bart-wrapper { 
     width: 320px;
     height: 320px;
-    top: 250px;
-    left: 100px;
-    z-index: 3;
-    background-color: var(--color-accent-pink);
-    padding: 10px;
+    top: 250px; 
+    left: 100px; 
+    z-index: 3; 
+    background-color: var(--color-accent-pink); 
+    padding: 10px; 
 }
 
 .image-homer, .image-bart {
@@ -153,37 +124,51 @@ body {
 }
 
 /* ----------------------------------------------------------------
- * 6. Mobile Responsiveness (@media)
+ * 6. Mobile Responsiveness (@media) - Р—РњР†РќР•РќРћ Р”Р›РЇ РќРђРљР›РђР”РђРќРќРЇ
  * ---------------------------------------------------------------- */
 @media (max-width: 992px) {
     body {
         padding: 20px 10px;
-        align-items: flex-start;
+        align-items: flex-start; 
     }
 
     .grid-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; 
         max-width: 400px;
-        gap: 10px;
+        gap: 10px; 
     }
 
     .image-section {
+        /* Р—Р±РµСЂС–РіР°С”РјРѕ relative РґР»СЏ РїРѕР·РёС†С–РѕРЅСѓРІР°РЅРЅСЏ РґС–С‚РµР№ */
+        position: relative; 
         order: 5;
-        position: static;
         width: 100%;
         margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        /* РќР°Р»Р°С€С‚СѓРІР°РЅРЅСЏ СЂРѕР·РјС–СЂС–РІ РґР»СЏ РјРѕР±С–Р»СЊРЅРѕРіРѕ РЅР°РєР»Р°РґР°РЅРЅСЏ */
+        height: 450px; /* Р¤С–РєСЃРѕРІР°РЅР° РІРёСЃРѕС‚Р° РґР»СЏ СЂРѕР·РјС–С‰РµРЅРЅСЏ Р·РѕР±СЂР°Р¶РµРЅСЊ */
     }
 
-    .image-homer-wrapper, .image-bart-wrapper {
-        position: static;
-        width: 100%;
-        max-width: 250px;
-        height: auto;
-        margin: 10px 0;
-        align-self: center;
+    /* Р’С–РґРЅРѕРІР»РµРЅРЅСЏ Absolute Positioning РґР»СЏ РЅР°РєР»Р°РґР°РЅРЅСЏ РЅР° РјРѕР±С–Р»СЊРЅРѕРјСѓ */
+    .image-homer-wrapper { 
+        position: absolute; /* Р’Р†Р”РќРћР’Р›Р•РќРћ */
+        width: 200px;
+        height: 250px;
+        top: 20px; 
+        left: 20px; 
+        margin: 0;
+        z-index: 2;
+    }
+
+    .image-bart-wrapper {
+        position: absolute; /* Р’Р†Р”РќРћР’Р›Р•РќРћ */
+        width: 250px;
+        height: 250px;
+        top: 150px; 
+        left: 50px;
+        margin: 0;
+        z-index: 3;
+        background-color: var(--color-accent-pink);
+        padding: 10px;
     }
 }
